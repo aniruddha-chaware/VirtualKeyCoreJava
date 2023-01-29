@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import virtualkey.services.ScreenService;
-
+import virtualkey.services.DirectoryService;
 
 
 public class WelcomeScreen implements Screen {
@@ -78,12 +78,9 @@ public class WelcomeScreen implements Screen {
 
     public void ShowFiles() {
 
-        //TODO: Get the files from the Directory
-    	
-    	
 
         System.out.println("List of Files: ");
-    	
+        DirectoryService.PrintFiles();
 
     }
     
