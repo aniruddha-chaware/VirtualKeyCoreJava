@@ -5,6 +5,8 @@ package virtualkey.screens;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import virtualkey.services.ScreenService;
+
 
 
 public class WelcomeScreen implements Screen {
@@ -58,7 +60,14 @@ public class WelcomeScreen implements Screen {
                 
                 break;
                 
-            
+            case 2: // Show File Options menu
+            	ScreenService.setCurrentScreen(ScreenService.FileOptionsScreen);
+                ScreenService.getCurrentScreen().Show();
+                ScreenService.getCurrentScreen().GetUserInput();
+                
+                this.Show();
+                
+                break;
                 
             default:
                 System.out.println("Invalid Option");
