@@ -78,13 +78,27 @@ public class FileOptionsScreen implements Screen {
     
     
     public void AddFile() {
-        System.out.println("Please Enter the Filename:");
+    	System.out.println("Please Enter the Filename:");
 
         String fileName = this.getInputString();
 
         System.out.println("You are adding a file named: " + fileName);
         
-		}
+		try {
+			Path path = FileSystems.getDefault().getPath(Directory.name + fileName).toAbsolutePath();
+			File file = new File(dir.getName() + fileName);
+			
+		      if (file.createNewFile()) {
+		    	  System.out.println("File created: " + file.getName());
+		    	  dir.getFiles().add(file);
+		    	  
+		      } else {
+		        System.out.println("This File Already Exits, no need to add another");
+		      }
+		}catch (IOException e){
+			System.out.println(e);
+		}        
+	}
         
     
     
