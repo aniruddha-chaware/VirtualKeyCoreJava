@@ -27,6 +27,7 @@ public class WelcomeScreen implements Screen {
     public void introWS() {
     	System.out.println(welcomeText);
         System.out.println(developerText);
+        //System.out.println("Please Select One Option");
         System.out.println("\n");
         Show();
     }
@@ -35,7 +36,10 @@ public class WelcomeScreen implements Screen {
     
     @Override
     public void Show() {
+    	System.out.println();
     	System.out.println("Main Menu");
+    	System.out.println("Please Select One Option ");
+    	System.out.println();
         for (String s : options)  {
             System.out.println(s);
         }
@@ -70,7 +74,7 @@ public class WelcomeScreen implements Screen {
                 break;
                 
             default:
-                System.out.println("Invalid Option");
+                System.out.println("Invalid Option, Please Select From Options Menu");
                 break;
         }
         
